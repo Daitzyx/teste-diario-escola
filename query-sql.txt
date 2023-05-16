@@ -1,0 +1,38 @@
+// 1-a... 
+INSERT INTO responsavel (nome) VALUES ('Pablo');
+
+INSERT INTO 
+  parentesco (idresponsavel, id_aluno, parentesco)
+SELECT 
+  r.idresponsavel, a.id, 'Pai'
+FROM 
+  responsavel AS r
+JOIN 
+  aluno AS a ON a.nome = 'Lucas'
+WHERE 
+  r.nome = 'Pablo';
+
+// 1-b...
+
+INSERT INTO responsavel (nome) VALUES ('Brenda');
+
+INSERT INTO 
+  parentesco (idresponsavel, id_aluno, parentesco)
+SELECT 
+  r.idresponsavel, a.id, 'Mae'
+FROM 
+  responsavel AS r
+JOIN 
+  aluno AS a ON a.nome = 'Lucas'
+WHERE 
+  r.nome = 'Brenda';
+
+
+// 2...
+SELECT parentesco from Parentesco where idAluno = 1 limit 2;
+
+
+// BONUS 1...
+SELECT * FROM aluno;
+SELECT * FROM responsavel;
+SELECT * FROM parentesco;
